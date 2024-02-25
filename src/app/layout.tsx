@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description: "The best shop in the world",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
