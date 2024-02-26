@@ -6,4 +6,6 @@ export interface ICartState {
     addToCart: (product: Product) => void;
     removeFromCart: (product: Product) => void;
     clearCart: () => void;
+    addQuantity: (product: Product) => void;
+    minusQuantity: (product: Product) => void;
 }

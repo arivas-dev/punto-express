@@ -1,9 +1,12 @@
 'use client';
 import { CiShoppingCart } from "react-icons/ci";
 import { useCart } from "@/app/hooks/useCart";
+import { useCartModal } from "@/app/hooks/useCartModal";
 
 export function Header() {
     const {cart} = useCart()
+    const { toggleModal } = useCartModal()
+
 
     return (
         <div className="flex justify-center w-full">
@@ -27,7 +30,7 @@ export function Header() {
                 </div>
 
                 {/* Cart with flotant quantity */}
-                <div className="flex items-center relative ">
+                <div className="flex items-center relative" onClick={() => toggleModal()}>
                     <CiShoppingCart size={30} />
                     <span className="bg-black text-white p-2 rounded-full cart-float-quantity">{cart.length}</span>
                 </div>

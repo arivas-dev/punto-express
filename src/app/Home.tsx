@@ -1,8 +1,12 @@
+import { CartSideModal } from "./components/CartModal";
 import { Layout } from "./components/Layout";
 import PageTitle from "./components/PageTitle";
+import { ProductModal } from "./components/ProductModal";
 import { ProductList } from "./components/ProductsList";
+import { useCartModal } from "./hooks/useCartModal";
 
 export default function Home() {
+
     return (
         <Layout>
             <PageTitle>
@@ -10,7 +14,9 @@ export default function Home() {
                 <PageTitle.Description>We have the products that you need</PageTitle.Description>
             </PageTitle>
 
-            <ProductList />
+            <ProductList/>
+
+            <CartSideModal/>
 
         </Layout>
     )

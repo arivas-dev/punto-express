@@ -21,7 +21,9 @@ export const CartContext = createContext<ICartState>({
     cart: cartInitialState,
     addToCart: () => {},
     removeFromCart: () => {},
-    clearCart: () => {}
+    clearCart: () => {},
+    addQuantity: () => {},
+    minusQuantity: () => {}
 })
 
 
@@ -40,19 +42,31 @@ function useCartReducer() {
         payload: product
     })
 
+    const addQuantity = (product : Product) => dispatch({
+        type: 'ADD_QUANTITY',
+        payload: product
+    })
+
+    const minusQuantity = (product : Product) => dispatch({
+        type: 'MINUS_QUANTITY',
+        payload: product
+    })
+
     const clearCart = () => dispatch({ type: 'CLEAR_CART', payload : null})
 
-    return { state, addToCart, removeFromCart, clearCart }
+    return { state, addToCart, removeFromCart, clearCart, addQuantity, minusQuantity}
 }
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
-    const { state, addToCart, removeFromCart, clearCart } = useCartReducer()
+    const { state, addToCart, removeFromCart, clearCart, addQuantity, minusQuantity } = useCartReducer()
 
     return <CartContext.Provider value={{
         cart: state,
         addToCart,
         removeFromCart,
-        clearCart
+        clearCart,
+        addQuantity,
+        minusQuantity
     }}>
         {children}
     </CartContext.Provider>

@@ -1,20 +1,22 @@
 import { useCart } from "@/app/hooks/useCart";
+import { useProductModal } from "@/app/hooks/useProductModal";
 import { Product } from "@/app/types";
 import Image from "next/image";
 import { useId, useState } from "react";
 
 
-export function ProductItem({ product }: { product: Product }) {
+export function ProductItem({ product,onClick }: { product: Product, onClick: () => void}) {
     const { addToCart, removeFromCart, cart } = useCart()
-    const [quantity, setQuantity] = useState(0)
+    const { modal: { show}} = useProductModal()
+    const [quantity, setQuantity] = useState(1)
 
     const isProductInCart = (productId: number) =>
         cart.some((product: Product) => product.id === productId)
 
 
     return (
-        <div className="product-container mt-10 ">
-            <div key={product.id} className="product-card">
+        <div className={`product-container mt-10`} >
+            <div key={product.id} className="product-card" onClick={() => onClick()}>
                 <Image src={product.image} alt={product.title} width={200} height={200} />
 
             </div>
@@ -26,7 +28,7 @@ export function ProductItem({ product }: { product: Product }) {
             {/* minimaist add to cart button and quantity input, and plus and minus buttons */}
             <div className="flex justify-between mt-4">
                 <div className={`flex items-center ${isProductInCart(product.id) ? 'hidden' : 'block'}`} >
-                    <button onClick={() => setQuantity(quantity - 1)} className="bg-gray-200 px-2 py-1 rounded-md">-</button>
+                    <button onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)} className="bg-gray-200 px-2 py-1 rounded-md">-</button>
                     <span className="px-2">{quantity}</span>
                     <button onClick={() => setQuantity(quantity + 1)} className="bg-gray-200 px-2 py-1 rounded-md">+</button>
                 </div>

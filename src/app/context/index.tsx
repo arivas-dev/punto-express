@@ -1,9 +1,15 @@
 'use client';
 
 import { CartProvider } from "./CartContext";
+import { CartModalProvider } from "./CartModalContext";
+import { ProductModalProvider } from "./ProductModalContext";
 
-export function Providers ({children} : { children: React.ReactNode }) {
+export function Providers({ children }: { children: React.ReactNode }) {
     return <CartProvider>
-        {children}
+        <CartModalProvider>
+            <ProductModalProvider>
+                {children}
+            </ProductModalProvider>
+        </CartModalProvider>
     </CartProvider>
 }
