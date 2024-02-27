@@ -1,6 +1,7 @@
 'use client';
 import { useCart } from "@/app/hooks/useCart";
 import { Product } from "@/app/types";
+import { priceFormat } from "@/app/utils/priceFormat";
 import { FaRegTrashAlt } from "react-icons/fa";
 
 
@@ -46,7 +47,7 @@ export function CartItem({ product }: { product: Product }) {
                         +
                     </button>
                 </div>
-                <p className="font-semibold text-lg">${product.price * (product.quantity || 1)}</p>
+                <p className="font-semibold text-lg">${priceFormat(product.price * (product.quantity || 1))}</p>
             </div>
         </div>
     )

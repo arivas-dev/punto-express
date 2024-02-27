@@ -1,13 +1,20 @@
 import { useProductModal } from "@/app/hooks/useProductModal"
 import { Product } from "@/app/types"
 import { Rate } from "../Rate"
+import { useCart } from "@/app/hooks/useCart"
+import { useState } from "react"
 
 
 export function ProductModal({ product }: { product: Product }) {
-    console.log("product:", product)
     const { modal: { show }, toggleModal } = useProductModal()
+    const { cart, addToCart, addQuantity, removeFromCart } = useCart()
+
+    const [quantity, setQuantity] = useState(1)
 
     if (!product) return null
+
+    const isProductInCart = (productId: number) =>
+        cart.some((product: Product) => product.id === productId)
 
     return (
         // a modal with tailwindcss , to show product details, and medium image size of the product
@@ -22,14 +29,20 @@ export function ProductModal({ product }: { product: Product }) {
                     <h3 className="text-2xl font-semibold">{product.title}</h3>
                     <p className="text-sm font-light line-clamp-5 mt-5">{product.description}</p>
 
-                    <span className="flex justify-between mt-10 items-center">
-                        <strong className="text-sm font-semibold">Quantity</strong>
-                        <div className="flex items-center">
-                            <button className="bg-gray-200 px-2 py-1 rounded-md">-</button>
-                            <span className="px-2">1</span>
-                            <button className="bg-gray-200 px-2 py-1 rounded-md">+</button>
-                        </div>
-                    </span>
+                    {
+                        !isProductInCart(product.id) && (
+                            <span className="flex justify-between mt-10 items-center">
+                                <strong className="text-sm font-semibold">Quantity</strong>
+                                <div className="flex items-center">
+                                    <button className="bg-gray-200 px-2 py-1 rounded-md" onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)} >-</button>
+                                    <span className="px-2">{quantity}</span>
+                                    <button className="bg-gray-200 px-2 py-1 rounded-md" onClick={() => setQuantity(quantity + 1)}>+</button>
+                                </div>
+                            </span>
+                        )
+                    }
+
+
 
 
 
@@ -49,7 +62,12 @@ export function ProductModal({ product }: { product: Product }) {
 
 
                     <span className="flex justify-between mt-4">
-                        <button className="bg-gray-200 px-2 py-1 rounded-md text-sm">Add to cart</button>
+                        {
+                            isProductInCart(product.id) ?
+                            <button onClick={() => removeFromCart(product)} className="bg-gray-500 px-2 py-1 rounded-md text-sm text-white">Remove from cart</button>
+                                :
+                                <button onClick={() => addToCart({ ...product, quantity })} className="bg-gray-200 px-2 py-1 rounded-md text-sm">Add to cart</button>
+                        }
                         <button onClick={() => toggleModal()} className="bg-gray-200 px-2 py-1 rounded-md text-sm">Close</button>
                     </span>
 

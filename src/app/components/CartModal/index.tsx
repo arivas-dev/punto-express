@@ -4,18 +4,17 @@ import { CartList } from "../CartList";
 import { useCart } from "@/app/hooks/useCart";
 import { Product } from "@/app/types";
 import { priceFormat } from "@/app/utils/priceFormat";
+import Link from "next/link";
 
 
 
-export const CartSideModal = () => {
+export const CartModal = () => {
 
     const { modal, toggleModal } = useCartModal()
     const { cart } = useCart()
-    
-    const total = cart.reduce((acc : number, product : Product) => acc + product.price * (product.quantity || 1), 0)
 
-    console.log('carr', ` ${modal.show ? 'block' : 'hidden'}`)
-    // modal rigth side
+    const total = cart.reduce((acc: number, product: Product) => acc + product.price * (product.quantity || 1), 0)
+
     return (
         <div className={`fixed inset-0 overflow-hidden z-50 ${modal.show ? 'block' : 'hidden'}`} aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
             <div className="absolute inset-0 overflow-hidden rela">
@@ -43,7 +42,11 @@ export const CartSideModal = () => {
                                 <span className="text-sm font-light">Total</span>
                                 <span className="text-sm font-bold">${priceFormat(total)}</span>
                             </div>
-                            <button className="w-full bg-black text-white p-2 rounded-md mt-4">Checkout</button>
+                            <Link
+                                href={"/checkout"}
+                                className="relative flex w-full bg-black text-white p-2 rounded-md mt-4 justify-center items-center">
+                                Checkout
+                            </Link>
                         </footer>
                     </div>
                 </section>

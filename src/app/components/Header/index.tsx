@@ -2,10 +2,22 @@
 import { CiShoppingCart } from "react-icons/ci";
 import { useCart } from "@/app/hooks/useCart";
 import { useCartModal } from "@/app/hooks/useCartModal";
+import { useEffect } from "react";
+import { useNav } from "./hook/useNav";
+import Link from "next/link";
+
+const NavItem = ({ text, path, currentPath }: { text: string, path: string, currentPath: string }) => {
+    return (
+        <Link href={path} className={`text-sm ${path === currentPath ? 'font-bold' : 'font-light'}`}>
+           {text}
+        </Link>
+    )
+}
 
 export function Header() {
-    const {cart} = useCart()
+    const { cart } = useCart()
     const { toggleModal } = useCartModal()
+    const { path } = useNav()
 
 
     return (
@@ -16,11 +28,12 @@ export function Header() {
                     <h1 className="text-3xl font-bold">Naty Shop</h1>
                 </div>
                 <div className="flex items-center gap-20 ">
-                    <p className="text-sm font-bold">Products</p>
-                    <p className="text-sm font-light">Categories</p>
-                    <p className="text-sm font-light">News</p>
-                    <p className="text-sm font-light">Contact</p>
-                    <p className="text-sm font-light">About</p>
+                    <NavItem text="Products" path="/" currentPath={path} />
+                    <NavItem text="Categories" path="/categories" currentPath={path} />
+                    <NavItem text="News" path="/news" currentPath={path} />
+                    <NavItem text="Contact" path="/contact" currentPath={path} />
+                    <NavItem text="About" path="/about" currentPath={path} />
+
                 </div>
 
                 {/* Search */}
@@ -30,7 +43,7 @@ export function Header() {
                 </div>
 
                 {/* Cart with flotant quantity */}
-                <div className="flex items-center relative" onClick={() => toggleModal()}>
+                <div className="flex items-center relative cursor-pointer " onClick={() => toggleModal()}>
                     <CiShoppingCart size={30} />
                     <span className="bg-black text-white p-2 rounded-full cart-float-quantity">{cart.length}</span>
                 </div>

@@ -16,7 +16,7 @@ export function ProductItem({ product,onClick }: { product: Product, onClick: ()
 
     return (
         <div className={`product-container mt-10`} >
-            <div key={product.id} className="product-card" onClick={() => onClick()}>
+            <div key={product.id} className="product-card cursor-pointer" onClick={() => onClick()}>
                 <Image src={product.image} alt={product.title} width={200} height={200} />
 
             </div>
