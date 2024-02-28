@@ -1,6 +1,5 @@
 "use client";
 
-import { redirect, RedirectType } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
