@@ -35,7 +35,6 @@ export function ProductModal({ product }: { product: Product }) {
             src={product.image}
             alt={product.title}
             className="object-contain w-6/12 m-auto"
-            loading="lazy"
             width={300}
             height={300}
           />

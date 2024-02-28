@@ -3,7 +3,7 @@
 import { updateLocalStorage } from "../utils/handleLocalStorage";
 
 export const cartInitialState =
-typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem("cart")) : [];
+typeof globalThis.window !== 'undefined' && JSON.parse(globalThis.window.localStorage.getItem("cart")) ? JSON.parse(globalThis.window.localStorage.getItem("cart")) : [];
 
 export const CART_ACTION_TYPES = {
   ADD_TO_CART: "ADD_TO_CART",

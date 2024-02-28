@@ -25,6 +25,7 @@ const NavItem = ({
 
 export function Header() {
   const { cart } = useCart();
+  console.log("cart:", cart)
   const { toggleModal } = useCartModal();
   
   const path = usePathname()
