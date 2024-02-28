@@ -15,12 +15,12 @@ export type Inputs = {
 
 export function useCheckout() {
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+
 
   const onSubmit = async (data: Inputs) => {
     // Simulate a payment request with /api/checkout
     setLoading(true);
-    setError("");
+    // setError("");
     return;
 
     try {
@@ -35,10 +35,10 @@ export function useCheckout() {
       if (response.ok) {
         redirect("/thanks");
       } else {
-        setError("Payment failed");
+        // setError("Payment failed");
       }
     } catch (error) {
-      setError("Payment failed");
+      // setError("Payment failed");
     }
   };
 

@@ -12,10 +12,6 @@ interface ICartState {
   toggleModal: () => void;
 }
 
-type Modal = {
-  show: boolean;
-};
-
 type Action = {
   type: string;
 };
