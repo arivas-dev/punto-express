@@ -42,8 +42,6 @@ export function Header() {
           <NavItem text="Contact" path="/contact" currentPath={path} />
           <NavItem text="About" path="/about" currentPath={path} />
         </div>
-        
-
 
         {/* Search */}
         <div className="hidden items-center gap-4 md:flex">

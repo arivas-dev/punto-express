@@ -1,4 +1,5 @@
-'use client'
+"use client";
+
 import { useCart } from "@/app/hooks/useCart";
 import { Product } from "@/app/interfaces";
 import Image from "next/image";

@@ -1,4 +1,5 @@
-'use client'
+"use client";
+
 import { Product } from "@/app/interfaces";
 import { useState } from "react";
 

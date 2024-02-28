@@ -1,4 +1,5 @@
-'use client'
+"use client";
+
 import { Rate } from "../Rate";
 import { useCart } from "@/app/hooks/useCart";
 import { useProductModal } from "@/app/hooks/useProductModal";

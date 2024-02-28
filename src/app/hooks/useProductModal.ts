@@ -1,4 +1,5 @@
-'use client'
+"use client";
+
 import { ProductModalContext } from "../context/ProductModalContext";
 import { useContext } from "react";
 

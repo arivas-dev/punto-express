@@ -1,7 +1,7 @@
 "use client";
 
-import { CartList } from "../CartList";
 import { useCheckout } from "../../hooks/useCheckout";
+import { CartList } from "../CartList";
 import Image from "next/image";
 import { FaWarehouse, FaTruckFast } from "react-icons/fa6";
 
