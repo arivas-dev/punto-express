@@ -68,5 +68,5 @@ Se ha utilizado la estructura de carpetas por defecto de Next.js, con la siguien
 
 ## Demo
 
-Puede ver el proyecto en el siguiente enlace: [https://prueba-tecnica.vercel.app/](https://prueba-tecnica.vercel.app/)
+Puede ver el proyecto en el siguiente enlace: [https://punto-express.vercel.app/](https://punto-express.vercel.app/)
 
