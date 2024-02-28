@@ -3,8 +3,8 @@
 import { useCart } from "@/app/hooks/useCart";
 import { useCartModal } from "@/app/hooks/useCartModal";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { CiShoppingCart } from "react-icons/ci";
-import { usePathname } from 'next/navigation';
 
 const NavItem = ({
   text,
@@ -25,10 +25,9 @@ const NavItem = ({
 
 export function Header() {
   const { cart } = useCart();
-  console.log("cart:", cart)
   const { toggleModal } = useCartModal();
-  
-  const path = usePathname()
+
+  const path = usePathname();
 
   return (
     <div className="flex justify-center w-full px-4 md:px-0">
@@ -40,7 +39,6 @@ export function Header() {
         <div className="flex items-center md:gap-20 mb-4 md:mb-0 flex-row justify-center gap-4">
           <NavItem text="Products" path="/" currentPath={path} />
           <NavItem text="Categories" path="/categories" currentPath={path} />
-          <NavItem text="News" path="/news" currentPath={path} />
           <NavItem text="Contact" path="/contact" currentPath={path} />
           <NavItem text="About" path="/about" currentPath={path} />
         </div>

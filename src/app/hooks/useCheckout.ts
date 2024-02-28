@@ -1,5 +1,8 @@
-import { redirect } from "next/navigation";
-import { useState } from "react";
+"use client";
+
+import { redirect, RedirectType } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 
 export type Inputs = {
@@ -15,32 +18,27 @@ export type Inputs = {
 
 export function useCheckout() {
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
-
-  const onSubmit = async (data: Inputs) => {
-    // Simulate a payment request with /api/checkout
+  const onSubmit = useCallback(async (data: Inputs) => {
     setLoading(true);
-    // setError("");
-    return;
 
     try {
-      const response = await fetch("/api/checkout", {
+      await fetch("/api/checkout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
-
-      if (response.ok) {
-        redirect("/thanks");
-      } else {
-        // setError("Payment failed");
-      }
+      setLoading(false);
+      return router.push("/thanks");
     } catch (error) {
       // setError("Payment failed");
     }
-  };
+    setLoading(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const {
     register,

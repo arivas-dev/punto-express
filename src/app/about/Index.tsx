@@ -7,10 +7,10 @@ export default function Index() {
     <Layout>
       <PageTitle>
         <PageTitle.Title>About us</PageTitle.Title>
-        <PageTitle.Description>We are the best store in the world</PageTitle.Description>
+        <PageTitle.Description>
+          We are the best store in the world
+        </PageTitle.Description>
       </PageTitle>
-
-      
 
       <CartModal />
     </Layout>

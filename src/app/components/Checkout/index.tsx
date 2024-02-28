@@ -167,7 +167,7 @@ export const Checkout = () => {
                 id="email"
                 className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="your.email@gmail.com"
-                {...register("email", { required: true })}
+                {...register("email", { required: false })}
               />
               <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                 <svg
@@ -198,7 +198,7 @@ export const Checkout = () => {
                 id="card-holder"
                 className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm uppercase shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="Your full name here"
-                {...register("cardHolder", { required: true })}
+                {...register("cardHolder", { required: false })}
               />
               <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                 <svg
@@ -230,7 +230,7 @@ export const Checkout = () => {
                   id="card-no"
                   className="w-full rounded-md border border-gray-200 px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                   placeholder="xxxx-xxxx-xxxx-xxxx"
-                  {...register("cardNumber", { required: true })}
+                  {...register("cardNumber", { required: false })}
                 />
                 <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                   <svg
@@ -250,13 +250,13 @@ export const Checkout = () => {
                 type="text"
                 className="w-full rounded-md border border-gray-200 px-2 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="MM/YY"
-                {...register("expirationDate", { required: true })}
+                {...register("expirationDate", { required: false })}
               />
               <input
                 type="text"
                 className="w-1/6 flex-shrink-0 rounded-md border border-gray-200 px-2 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="CVC"
-                {...register("cvc", { required: true })}
+                {...register("cvc", { required: false })}
               />
             </div>
             <label
@@ -272,7 +272,7 @@ export const Checkout = () => {
                   id="billing-address"
                   className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                   placeholder="Street Address"
-                  {...register("address", { required: true })}
+                  {...register("address", { required: false })}
                 />
                 <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                   <Image
@@ -287,7 +287,7 @@ export const Checkout = () => {
               <select
                 itemType="text"
                 className="w-full rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
-                {...register("state", { required: true })}
+                {...register("state", { required: false })}
               >
                 <option value="State">State</option>
                 <option value="California">California</option>
@@ -298,7 +298,7 @@ export const Checkout = () => {
                 type="text"
                 className="flex-shrink-0 rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none sm:w-1/6 focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="ZIP"
-                {...register("zip", { required: true })}
+                {...register("zip", { required: false })}
               />
             </div>
 
@@ -322,7 +322,9 @@ export const Checkout = () => {
           )}
           <button
             formTarget="checkout"
-            className={`mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white ${isLoading} ? 'opacity-50' : ''`}
+            className={`mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white ${
+              isLoading ? "opacity-50" : ""
+            }`}
             disabled={isLoading}
           >
             Place Order

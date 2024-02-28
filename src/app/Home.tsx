@@ -1,4 +1,5 @@
-'use client'
+"use client";
+
 import { CartModal } from "./components/CartModal";
 import { Layout } from "./components/Layout";
 import PageTitle from "./components/PageTitle";

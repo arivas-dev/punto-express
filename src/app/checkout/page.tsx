@@ -1,3 +1,5 @@
+"use client";
+
 import { Providers } from "../context";
 import Index from "./Index";
 
