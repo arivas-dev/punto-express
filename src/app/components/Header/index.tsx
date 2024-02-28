@@ -1,10 +1,10 @@
 "use client";
 
-import { useNav } from "../../hooks/useNav";
 import { useCart } from "@/app/hooks/useCart";
 import { useCartModal } from "@/app/hooks/useCartModal";
 import Link from "next/link";
 import { CiShoppingCart } from "react-icons/ci";
+import { usePathname } from 'next/navigation';
 
 const NavItem = ({
   text,
@@ -13,7 +13,7 @@ const NavItem = ({
 }: {
   text: string;
   path: string;
-  currentPath: string;
+  currentPath: string | null;
 }) => (
   <Link
     href={path}
@@ -26,7 +26,8 @@ const NavItem = ({
 export function Header() {
   const { cart } = useCart();
   const { toggleModal } = useCartModal();
-  const { path } = useNav();
+  
+  const path = usePathname()
 
   return (
     <div className="flex justify-center w-full px-4 md:px-0">
