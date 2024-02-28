@@ -167,7 +167,7 @@ export const Checkout = () => {
                 id="email"
                 className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="your.email@gmail.com"
-                {...register("email", { required: false })}
+                {...register("email", { required: true })}
               />
               <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                 <svg
@@ -198,7 +198,7 @@ export const Checkout = () => {
                 id="card-holder"
                 className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm uppercase shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="Your full name here"
-                {...register("cardHolder", { required: false })}
+                {...register("cardHolder", { required: true })}
               />
               <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                 <svg
@@ -230,7 +230,7 @@ export const Checkout = () => {
                   id="card-no"
                   className="w-full rounded-md border border-gray-200 px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                   placeholder="xxxx-xxxx-xxxx-xxxx"
-                  {...register("cardNumber", { required: false })}
+                  {...register("cardNumber", { required: true })}
                 />
                 <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                   <svg
@@ -250,13 +250,13 @@ export const Checkout = () => {
                 type="text"
                 className="w-full rounded-md border border-gray-200 px-2 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="MM/YY"
-                {...register("expirationDate", { required: false })}
+                {...register("expirationDate", { required: true })}
               />
               <input
                 type="text"
                 className="w-1/6 flex-shrink-0 rounded-md border border-gray-200 px-2 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="CVC"
-                {...register("cvc", { required: false })}
+                {...register("cvc", { required: true })}
               />
             </div>
             <label
@@ -272,7 +272,7 @@ export const Checkout = () => {
                   id="billing-address"
                   className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                   placeholder="Street Address"
-                  {...register("address", { required: false })}
+                  {...register("address", { required: true })}
                 />
                 <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                   <Image
@@ -287,7 +287,7 @@ export const Checkout = () => {
               <select
                 itemType="text"
                 className="w-full rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
-                {...register("state", { required: false })}
+                {...register("state", { required: true })}
               >
                 <option value="State">State</option>
                 <option value="California">California</option>
@@ -298,7 +298,7 @@ export const Checkout = () => {
                 type="text"
                 className="flex-shrink-0 rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none sm:w-1/6 focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="ZIP"
-                {...register("zip", { required: false })}
+                {...register("zip", { required: true })}
               />
             </div>
 
