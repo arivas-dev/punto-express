@@ -1,9 +1,7 @@
-import { CartModal } from "../components/CartModal"
-import { Layout } from "../components/Layout"
-import PageTitle from "../components/PageTitle"
-import { ProductModal } from "../components/ProductModal"
-import { Thanks } from "../components/Thanks"
-import { useCartModal } from "../hooks/useCartModal"
+import { CartModal } from "../components/CartModal";
+import { Layout } from "../components/Layout";
+import PageTitle from "../components/PageTitle";
+import { Thanks } from "../components/Thanks";
 
 export default function Index() {
   return (
@@ -19,5 +17,5 @@ export default function Index() {
 
       <CartModal />
     </Layout>
-  )
+  );
 }

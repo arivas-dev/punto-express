@@ -1,13 +1,13 @@
-"use client"
-import { CartList } from "../CartList"
-import { FaWarehouse, FaTruckFast } from "react-icons/fa6"
-import { useCheckout,Inputs } from "./hooks/useCheckout"
-import { SubmitHandler } from "react-hook-form"
+"use client";
 
+import { CartList } from "../CartList";
+import { useCheckout } from "../../hooks/useCheckout";
+import Image from "next/image";
+import { FaWarehouse, FaTruckFast } from "react-icons/fa6";
 
 export const Checkout = () => {
-  const { form,isLoading } = useCheckout()
-  const { register, handleSubmit, watch, errors,onSubmit } = form
+  const { form, isLoading } = useCheckout();
+  const { register, handleSubmit, errors, onSubmit } = form;
 
   return (
     <div>
@@ -18,14 +18,16 @@ export const Checkout = () => {
               <li className="flex items-center space-x-3 text-left sm:space-x-4">
                 <a
                   className="flex h-6 w-6 items-center justify-center rounded-full bg-black text-xs font-semibold text-white"
-                  href="#">
+                  href="#"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-4 w-4"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    strokeWidth="2">
+                    strokeWidth="2"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -41,7 +43,8 @@ export const Checkout = () => {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                strokeWidth="2">
+                strokeWidth="2"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -51,7 +54,8 @@ export const Checkout = () => {
               <li className="flex items-center space-x-3 text-left sm:space-x-4">
                 <a
                   className="flex h-6 w-6 items-center justify-center rounded-full bg-black text-xs font-semibold text-white ring ring-black ring-offset-2"
-                  href="#">
+                  href="#"
+                >
                   2
                 </a>
                 <span className="font-semibold text-gray-900">Shipping</span>
@@ -62,7 +66,8 @@ export const Checkout = () => {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                strokeWidth="2">
+                strokeWidth="2"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -72,7 +77,8 @@ export const Checkout = () => {
               <li className="flex items-center space-x-3 text-left sm:space-x-4">
                 <a
                   className="flex h-6 w-6 items-center justify-center rounded-full bg-neutral-400 text-xs font-semibold text-white"
-                  href="#">
+                  href="#"
+                >
                   3
                 </a>
                 <span className="font-semibold text-neutral-400">Payment</span>
@@ -104,7 +110,8 @@ export const Checkout = () => {
               <span className="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
               <label
                 className="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4 items-center"
-                htmlFor="radio_1">
+                htmlFor="radio_1"
+              >
                 <FaTruckFast className="text-2xl" />
                 <div className="ml-5">
                   <span className="mt-2 font-semibold">Delivery</span>
@@ -125,7 +132,8 @@ export const Checkout = () => {
               <span className="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
               <label
                 className="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4 items-center"
-                htmlFor="radio_2">
+                htmlFor="radio_2"
+              >
                 <FaWarehouse className="text-2xl" />
                 <div className="ml-5">
                   <span className="mt-2 font-semibold">Warehouse</span>
@@ -137,7 +145,11 @@ export const Checkout = () => {
             </div>
           </form>
         </div>
-        <form className="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0" onSubmit={handleSubmit(onSubmit)} id="checkout">
+        <form
+          className="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0"
+          onSubmit={handleSubmit(onSubmit)}
+          id="checkout"
+        >
           <p className="text-xl font-medium">Payment Details</p>
           <p className="text-gray-400">
             Complete your order by providing your payment details.
@@ -145,7 +157,8 @@ export const Checkout = () => {
           <div className="">
             <label
               htmlFor="email"
-              className="mt-4 mb-2 block text-sm font-medium">
+              className="mt-4 mb-2 block text-sm font-medium"
+            >
               Email
             </label>
             <div className="relative">
@@ -163,7 +176,8 @@ export const Checkout = () => {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  strokeWidth="2">
+                  strokeWidth="2"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -174,7 +188,8 @@ export const Checkout = () => {
             </div>
             <label
               htmlFor="card-holder"
-              className="mt-4 mb-2 block text-sm font-medium">
+              className="mt-4 mb-2 block text-sm font-medium"
+            >
               Card Holder
             </label>
             <div className="relative">
@@ -192,7 +207,8 @@ export const Checkout = () => {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  strokeWidth="2">
+                  strokeWidth="2"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -203,7 +219,8 @@ export const Checkout = () => {
             </div>
             <label
               htmlFor="card-no"
-              className="mt-4 mb-2 block text-sm font-medium">
+              className="mt-4 mb-2 block text-sm font-medium"
+            >
               Card Details
             </label>
             <div className="flex">
@@ -222,7 +239,8 @@ export const Checkout = () => {
                     width="16"
                     height="16"
                     fill="currentColor"
-                    viewBox="0 0 16 16">
+                    viewBox="0 0 16 16"
+                  >
                     <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z" />
                     <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1z" />
                   </svg>
@@ -243,7 +261,8 @@ export const Checkout = () => {
             </div>
             <label
               htmlFor="billing-address"
-              className="mt-4 mb-2 block text-sm font-medium">
+              className="mt-4 mb-2 block text-sm font-medium"
+            >
               Billing Address
             </label>
             <div className="flex flex-col sm:flex-row">
@@ -256,9 +275,11 @@ export const Checkout = () => {
                   {...register("address", { required: true })}
                 />
                 <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
-                  <img
+                  <Image
                     className="h-4 w-4 object-contain"
                     src="https://flagpack.xyz/_nuxt/4c829b6c0131de7162790d2f897a90fd.svg"
+                    width={16}
+                    height={16}
                     alt=""
                   />
                 </div>
@@ -267,7 +288,7 @@ export const Checkout = () => {
                 itemType="text"
                 className="w-full rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                 {...register("state", { required: true })}
-                >
+              >
                 <option value="State">State</option>
                 <option value="California">California</option>
                 <option value="Florida">Florida</option>
@@ -296,14 +317,18 @@ export const Checkout = () => {
               <p className="text-2xl font-semibold text-gray-900">$408.00</p>
             </div>
           </div>
-          {
-            Object.keys(errors).length > 0 && <div className="mt-4 text-red-500">Please fill all the fields</div>
-          }
-          <button formTarget="checkout" className={`mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white ${isLoading} ? 'opacity-50' : ''`} disabled={isLoading}>
+          {Object.keys(errors).length > 0 && (
+            <div className="mt-4 text-red-500">Please fill all the fields</div>
+          )}
+          <button
+            formTarget="checkout"
+            className={`mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white ${isLoading} ? 'opacity-50' : ''`}
+            disabled={isLoading}
+          >
             Place Order
           </button>
         </form>
       </div>
     </div>
-  )
-}
+  );
+};

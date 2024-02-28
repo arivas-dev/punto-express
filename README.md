@@ -1,51 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Este es un proyecto desarrollado para evaluar mis conocimientos en React Js
 
-## Getting Started
+## Prueba técnica :  Desarrollador Frontend
 
-First, run the development server:
+Crea una tienda en línea básica que permita a los usuarios buscar productos, añadirlos al carrito, y realizar una compra.
+    Implementa características fundamentales como búsqueda de productos, visualización de detalles del producto, carrito de compras, y un simple proceso de checkout.
+
+## Instalación
+
+Para correr el proyecto debe instalar las dependencias, usando el siguiente comando
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+# o si usa yarn
+yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Una vez instaladas las dependencias, puede correr el proyecto con los siguientes comandos:
 
 
+```bash
+# si no se encuentra dentro del folder:prueba-tecnica ejecute:
+cd prueba-tecnica
 
-##TODO
+#luego
+npm run dev
+# o si usa yarn
+yarn dev
+```
 
-[ ] Agregar suspense
-[ x ] Ver carrito de compra
-[ ] Ver detalles del producto
-[ ] Hacer backend
-[ ] Usar ESlint
-[ ] Refactorizar css
-[ ] About us
-[ ] favicon
-[ ] Finalizar compra
+Abra [http://localhost:3000](http://localhost:3000) con el navegador para ver el resultado.
+
+## ¿ Como esta construido ?
+
+Para este proyecto he utilizado las siguientes tecnologías:
+
+- Next.js
+- React
+- Tailwindcss
+
+## Estructura de carpetas
+
+Se ha utilizado la estructura de carpetas por defecto de Next.js, con la siguiente modificación:
+
+- `components`: Contiene los componentes de React que se utilizan en el proyecto.
+- `interfaces`: Contiene las interfaces de TypeScript que se utilizan en el proyecto.'
+- `reducers' : Contiene los reducers que se utilizan en el proyecto.
+- `services`: Contiene los servicios que se utilizan en el proyecto.
+- `api`: Contiene los datos que se utilizan en el proyecto.'
+- `products.json`: Contiene los productos que se utilizan en el proyecto.
+
+## Librerias de desarrollo utilizadas
+
+- `typescript`: Para agregar tipado a JavaScript.
+- `autoprefixer`: Para agregar prefijos a los estilos de tailwindcss.
+- `postcss`: Para agregar estilos al proyecto.
+- `eslint`: Para agregar reglas de linteo a JavaScript.
+- `prettier`: Para formatear el código de JavaScript.
+
+## Mejoras futuras
+
+- Agregar pruebas unitarias.
+- Agregar pruebas de integración.
+- Agregar un proceso de checkout más completo.
+- Agregar un proceso de autenticación.
+- Agregar un proceso de pago.
+
+
+## Demo
+
+Puede ver el proyecto en el siguiente enlace: [https://prueba-tecnica.vercel.app/](https://prueba-tecnica.vercel.app/)
 

@@ -1,13 +1,14 @@
-'use client'
-import { useContext } from 'react'
-import { CartModalContext } from '../context/CartModalContext'
+"use client";
+
+import { CartModalContext } from "../context/CartModalContext";
+import { useContext } from "react";
 
 export const useCartModal = () => {
-  const context = useContext(CartModalContext)
+  const context = useContext(CartModalContext);
 
   if (context === undefined) {
-    throw new Error('useCartModal must be used within a CartProvider')
+    throw new Error("useCartModal must be used within a CartProvider");
   }
 
-  return context
-}
+  return context;
+};
